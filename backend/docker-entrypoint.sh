@@ -1,5 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-python manage.py migrate --noinput
-python manage.py collectstatic --noinput 2>/dev/null || true
+
+# Если база ещё не готова — не валим запуск (иначе будет 503)
+python manage.py migrate --noinput || true
+python manage.py collectstatic --noinput || true
+
+# ВАЖНО: запускаем CMD из Dockerfile (gunicorn)
 exec "$@"
