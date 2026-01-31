@@ -16,5 +16,5 @@ RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-# ВАЖНО: слушаем Railway PORT
-CMD ["sh", "-c", "gunicorn YOUR_PROJECT.wsgi:application --bind 0.0.0.0:${PORT}"]
+# ВАЖНО: слушаем Railway PORT (Railway предоставляет $PORT)
+CMD ["sh", "-c", "gunicorn config.wsgi:application --bind 0.0.0.0:${PORT}"]
