@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --foreground: #1a1a1a;
+  --background: #fafaf9;
+}
+
+.dark {
+  --foreground: #fafaf9;
+  --background: #0f0f0f;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
